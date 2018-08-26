@@ -35,8 +35,10 @@ body {
 }
 .content {
   text-align: left;
+  font-size: 0;
 }
 .article {
+  font-size: 14px;
   display: inline-block;
   width: 498px;
   padding: 30px 30px 100px;
