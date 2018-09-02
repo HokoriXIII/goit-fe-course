@@ -34,6 +34,7 @@
 
 /* Header */
 .header {
+  font-family: "Roboto", MyriadPro;
   width: 100%;
   text-transform: uppercase;
   margin-top: 35px;
@@ -71,6 +72,7 @@
 
 /* Section */
 .section {
+  font-family: "Roboto", MyriadPro;
   width: 100%;
 
 }
@@ -152,6 +154,7 @@
 /* News */
 .news{
   padding:0 15px;
+  font-family: "OpenSans", MyriadPro;
 }
 .news-item {
   float: left;
