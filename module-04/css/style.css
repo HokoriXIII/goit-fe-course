@@ -9,6 +9,7 @@
   max-width: 1170px;
   text-align: center;
   margin: auto;
+  /* background: #4caf50; */
 }
 
 /* Fonts */
@@ -71,9 +72,10 @@
 /* Section */
 .section {
   width: 100%;
+
 }
 .section-header {
-  margin-top: 140px;
+  margin-top: 105px;
   font-size: 48pt;
 }
 .section-header::after {
@@ -88,6 +90,11 @@
 }
 
 /* Shop */
+.products{
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 0;
+}
 .product-item {
   float: left;
   text-transform: uppercase;
@@ -143,6 +150,9 @@
 }
 
 /* News */
+.news{
+  padding:0 15px;
+}
 .news-item {
   float: left;
   width: 350px;
@@ -174,7 +184,7 @@
   width: 100%;
   color: rgba(85, 82, 82, 255);
   font-weight: 600;  
-  font-size: 18px;
+  font-size: 18pt;
   margin-top: 5px;
 }
 .news-name::after{
@@ -183,13 +193,13 @@
   height: 3px;
   background-color: rgba(26, 188, 156, 255);
   content: "";
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin-top: 11px;
+  margin-bottom: 29px;
 }
 .news-text {
   float: left;
   width: 100%;
-  font-size: 14px;
+  font-size: 14pt;
   margin-bottom: 15px;
 }
 .news-item:hover .product-item-footer{
@@ -208,8 +218,8 @@
 }
 .button {
   display: block;
-  font-size: 20px;
-  padding: 20px 35px;
+  font-size: 16pt;
+  padding: 19px 43px;
   background-color: #4caf50;
   color: #fff;
   border: 0px solid #626262;
@@ -220,7 +230,7 @@
   background-color: #fff;
   color: #4caf50;
   cursor: pointer;
-  border: 2px solid #626262;
+  border: 1px solid #626262;
 }
 
 /* Clearfix */
