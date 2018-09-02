@@ -13,12 +13,6 @@
 }
 
 /* Fonts */
-.roboto {
-  font-family: "Roboto", MyriadPro;
-}
-.open-sans {
-  font-family: "OpenSans", MyriadPro;
-}
 .light {
   font-weight: 300;
 }
@@ -216,23 +210,23 @@
 }
 
 /* Button */
-.button-container {
-  margin: 16px;
-}
 .button {
   display: block;
+  font-family: "OpenSans", MyriadPro;
   font-size: 16pt;
   padding: 19px 43px;
-  background-color: #4caf50;
+  background-color: #4ec6ab;
   color: #fff;
-  border: 0px solid #626262;
+  border: none;
+  border-radius: 3px;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+  margin-top: 16px;
+  cursor: pointer;
 }
 .button:hover {
   background-color: #fff;
-  color: #4caf50;
-  cursor: pointer;
+  color: #4ec6ab;
   border: 1px solid #626262;
 }
 
