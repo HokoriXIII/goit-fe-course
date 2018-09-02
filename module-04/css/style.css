@@ -9,6 +9,7 @@
   max-width: 1170px;
   text-align: center;
   margin: auto;
+  /* background: #158834; */
 }
 
 /* Fonts */
@@ -31,11 +32,12 @@
   width: 100%;
   text-transform: uppercase;
   margin-top: 35px;
+  margin-left: 30px;
 }
 .logo {
   float: left;
   margin: auto;
-  font-size: 30pt;
+  font-size: 30px;
 }
 .logo a {
   text-decoration: none;
@@ -46,8 +48,9 @@
 .nav {
   float: right;
   list-style-type: none;
-  font-size: 14pt;
+  font-size: 14px;
   padding: 0;
+  margin-right: 60px;
 }
 .nav-item {
   padding: 0.697em 17px;
@@ -70,7 +73,8 @@
 }
 .section-header {
   margin-top: 105px;
-  font-size: 48pt;
+  font-size: 48px;
+  line-height: 58px;
 }
 .section-header::after {
   display: block;
@@ -120,12 +124,12 @@
   float: left;
   width: 75%;
   color: #fff;
-  padding-left: 8pt;
+  padding-left: 8px;
 }
 .product-item-price {
   color: #fff;
   float: right;
-  padding-right: 8pt;
+  padding-right: 8px;
   text-align: center;
 }
 .product-item-price::before {
@@ -177,7 +181,7 @@
   width: 100%;
   color: rgba(85, 82, 82, 255);
   font-weight: 600;  
-  font-size: 18pt;
+  font-size: 18px;
   line-height: 26px;
   margin-top: 5px;
 }
@@ -193,16 +197,20 @@
 .news-text {
   float: left;
   width: 100%;
-  font-size: 14pt;
+  font-size: 14px;
   line-height: 26px;
   margin-bottom: 15px;
 }
+
+
+
+
 
 /* Button */
 .button {
   display: block;
   font-family: "Open Sans", MyriadPro;
-  font-size: 16pt;
+  font-size: 16px;
   padding: 19px 43px;
   background-color: #4ec6ab;
   color: #fff;
