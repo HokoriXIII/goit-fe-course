@@ -144,7 +144,7 @@
 /* News */
 .news{
   padding:0 15px;
-  font-family: "OpenSans", MyriadPro;
+  font-family: "Open Sans", MyriadPro;
 }
 .news-item {
   float: left;
@@ -201,7 +201,7 @@
 /* Button */
 .button {
   display: block;
-  font-family: "OpenSans", MyriadPro;
+  font-family: "Open Sans", MyriadPro;
   font-size: 16pt;
   padding: 19px 43px;
   background-color: #4ec6ab;
