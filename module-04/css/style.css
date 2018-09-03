@@ -9,96 +9,111 @@
   max-width: 1170px;
   text-align: center;
   margin: auto;
-  /* background: #158834; */
-}
-
-/* Fonts */
-.light {
-  font-weight: 300;
-}
-.semibold{
-  font-weight: 600;  
-}
-.bold {
-  font-weight: 700;
-}
-.black {
-  font-weight: 900;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Header */
 .header {
-  font-family: "Roboto", MyriadPro;
   width: 100%;
   text-transform: uppercase;
   margin-top: 35px;
   margin-left: 30px;
+  font-weight: 300;
 }
 .logo {
   float: left;
   margin: auto;
   font-size: 30px;
+  line-height: 32px;
+  color: #555252;
 }
 .logo a {
   text-decoration: none;
 }
 .logo::first-letter {
-  color: rgba(26, 188, 156, 255);
+  color: #1abc9c;
+  font-weight: 900;
 }
 .nav {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
   float: right;
   list-style-type: none;
-  font-size: 14px;
-  padding: 0;
   margin-right: 60px;
 }
+.nav li:not(:last-child) {
+  margin-right: 32px;
+}
 .nav-item {
-  padding: 0.697em 17px;
+  padding: 0.55em 0;
   display: inline-block;
 }
-.nav-item:last-child {
-  padding-right: 0;
-}
 .nav-item a {
+  color: #0f0101;
   text-decoration: none;
+  letter-spacing: -0.02em;
 }
 .nav-item a:hover {
-  color: rgba(26, 188, 156, 255);
+  color: #1abc9c;
 }
 
 /* Section */
-.section {
-  font-family: "Roboto", MyriadPro;
-  width: 100%;
-}
 .section-header {
   margin-top: 105px;
   font-size: 48px;
+  font-weight: 900;
   line-height: 58px;
 }
 .section-header::after {
   display: block;
   width: 164px;
   height: 7px;
-  background-color: rgba(26, 188, 156, 255);
+  background-color: #1abc9c;
+  content: "";
+  margin: 32px auto 92px;
+}
+.shop-section-header{  
+  color: #515151;
+}
+.news-section-header{  
+  color: #555252;
+}
+
+/* Shop */
+.section-header-products {
+  color: #515151;
+  font-size: 48px;
+  text-transform: uppercase;
+  line-height: 32px;
+  text-align: center;
+  margin-top: 90px;
+  font-weight: 900;
+  line-height: 58px;
+}
+.section-header-products::after {
+  display: block;
+  width: 164px;
+  height: 7px;
+  background-color: #1abc9c;
   content: "";
   margin: auto;
   margin-top: 32px;
   margin-bottom: 92px;
 }
-
-/* Shop */
-.products{
+.products {
   display: inline-block;
   padding: 0 15px;
   font-size: 0;
+  font-weight: 900;
 }
 .product-item {
   float: left;
   text-transform: uppercase;
   width: 255px;
   height: 322px;
-  background: rgba(233, 240, 253, 255);
+  background: #e9f0fd;
   margin: 15px;
 }
 .product-picture img {
@@ -110,8 +125,8 @@
   background: linear-gradient(
     90deg,
     #323232 0%,
-    #323232 75%,
-    #8c8c8c 75%,
+    #323232 80%,
+    #8c8c8c 80%,
     #8c8c8c 100%
   );
   width: 100%;
@@ -135,82 +150,63 @@
 .product-item-price::before {
   content: "$";
 }
-.product-item:hover .product-item-footer{
+.product-item:hover .product-item-footer {
   background: linear-gradient(
     90deg,
     #1abc9c 0%,
-    #1abc9c 75%,
-    #7fd9c7 75%,
+    #1abc9c 80%,
+    #7fd9c7 80%,
     #7fd9c7 100%
-  );  
+  );
 }
 
 /* News */
-.news{
-  padding:0 15px;
-  font-family: "Open Sans", MyriadPro;
+.news {
+  padding: 0 15px;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
 }
 .news-item {
   float: left;
   width: 350px;
   margin: 15px;
-  text-align: left;
-}
-.news-picture {
 }
 .news-picture img {
   width: 350px;
   height: 262px;
   object-fit: cover;
 }
-.news-item-footer {
-  background: linear-gradient(
-    90deg,
-    #323232 0%,
-    #323232 75%,
-    #8c8c8c 75%,
-    #8c8c8c 100%
-  );
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  font-size: 18px;
-}
 .news-name {
-  float: left;
   width: 100%;
-  color: rgba(85, 82, 82, 255);
-  font-weight: 600;  
+  color: #555252;
+  font-weight: 600;
   font-size: 18px;
   line-height: 26px;
   margin-top: 5px;
 }
-.news-name::after{
+.news-name::after {
   display: block;
   width: 136px;
   height: 3px;
-  background-color: rgba(26, 188, 156, 255);
+  background-color: #1abc9c;
   content: "";
   margin-top: 11px;
   margin-bottom: 29px;
 }
 .news-text {
-  float: left;
   width: 100%;
   font-size: 14px;
+  font-weight: 400;
   line-height: 26px;
   margin-bottom: 15px;
 }
 
-
-
-
-
 /* Button */
 .button {
   display: block;
-  font-family: "Open Sans", MyriadPro;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
+  font-weight: 300;
   padding: 19px 43px;
   background-color: #4ec6ab;
   color: #fff;
