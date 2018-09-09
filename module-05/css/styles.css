@@ -11,6 +11,16 @@ h5 {
   margin: 0;
   padding: 0;
 }
+a:link {
+  text-decoration: none; /* Убирает подчеркивание для ссылок */
+}
+a:visited {
+  text-decoration: none;
+  color: #555252;
+}
+a:active {
+  text-decoration: none;
+}
 body {
   color: rgb(15, 1, 1);
 }
@@ -175,14 +185,14 @@ body {
   background: #e9f0fd;
   padding-bottom: 100px;
 }
-.categories {
+.products {
   display: inline-block;
   padding: 0 15px;
   font-size: 0;
   font-weight: 900;
   list-style-type: none;
 }
-.category-item {
+.product-item {
   float: left;
   text-transform: uppercase;
   width: 255px;
@@ -191,12 +201,12 @@ body {
   margin: 15px;
   position: relative;
 }
-.category-picture img {
+.product-picture img {
   width: 255px;
   height: 282px;
   object-fit: cover;
 }
-.category-item-footer {
+.product-item-footer {
   /* background: linear-gradient(
       90deg,
       #323232 0%,
@@ -211,23 +221,23 @@ body {
   font-size: 18px;
   text-align: left;
 }
-.category-item-name {
+.product-item-name {
   float: left;
   width: 75%;
   color: #fff;
   padding: 0 8px;
 }
-.category-item-price {
+.product-item-price {
   background: #ffffff70;
   color: #fff;
   float: right;
   padding: 0 8px;
   text-align: center;
 }
-.category-item-price::before {
+.product-item-price::before {
   content: "$";
 }
-.category-item:hover .category-item-footer {
+.product-item:hover .product-item-footer {
   /* background: linear-gradient(
       90deg,
       #1abc9c 0%,
@@ -237,7 +247,7 @@ body {
     ); */
   background: #1abc9c;
 }
-.category-item:hover .overlay {
+.product-item:hover .overlay {
   opacity: 1;
 }
 /* Overlay */
