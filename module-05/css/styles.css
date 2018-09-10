@@ -12,7 +12,8 @@ h5 {
   padding: 0;
 }
 a:link {
-  text-decoration: none; /* Убирает подчеркивание для ссылок */
+  text-decoration: none; 
+  color: #555252;
 }
 a:visited {
   text-decoration: none;
@@ -20,6 +21,7 @@ a:visited {
 }
 a:active {
   text-decoration: none;
+  color: #555252;
 }
 body {
   color: rgb(15, 1, 1);
