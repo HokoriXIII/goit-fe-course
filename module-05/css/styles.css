@@ -57,6 +57,7 @@ body {
   color: #555252;
 }
 .logo a {
+  color: #555252;
   text-decoration: none;
 }
 .logo::first-letter {
