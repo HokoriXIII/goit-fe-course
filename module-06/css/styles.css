@@ -14,6 +14,20 @@
   background: #fff;
   /* background: coral; */
 }
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 /* Header */
 .header {
@@ -78,7 +92,7 @@
   align-items: center;
   color: #333;
 }
-.section-title-subtitle {
+.section-title-about {
   font-family: "Kaushan Script", cursive;
   font-size: 24px;
 }
@@ -88,13 +102,24 @@
   font-size: 30px;
   margin-top: 22px;
 }
-.section-title::after {
+.section-title-title::after {
   display: block;
   width: 60px;
   height: 3px;
   background-color: #f38181;
   content: "";
   margin: 42px auto 0;
+}
+.section-title-description  {
+  width: 100%;
+  max-width: 945px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  color: #999;
+  margin-top: 42px;
+  margin-bottom: 45px;
 }
 
 /* Section Content */
@@ -137,18 +162,8 @@
 
 /* Team */
 .team {
-  padding-top: 13px;
 }
-.team-about {
-  width: 100%;
-  max-width: 945px;
-  font-size: 15px;
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  font-weight: 400;
-  color: #999;
-}
-.team-content-card/* tcc */ {
+.team-content-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -156,11 +171,11 @@
   width: 33%;
   /* text-align: center; */
 }
-.tcc-img {
+.team-content-card-img {
   width: 383px;
   height: 473px;
   background: #95e1d3;
-  margin: 90px auto 15px;
+  margin: 0px auto 15px;
   position: relative;
 }
 .img {
@@ -168,13 +183,20 @@
   height: 473px;
   object-fit: cover;
 }
-.tcc-name {
+.team-content-card-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.team-content-card-name {
   text-transform: uppercase;
   font-size: 14px;
   color: #333;
   margin: 15px auto;
+  font-weight: 400;
 }
-.tcc-specialty {
+.team-content-card-specialty {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   font-weight: 300;
@@ -201,16 +223,31 @@
   justify-content: center;
   align-items: center;
 }
-.submenu-btn {
+.social-link{
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
   width: 56px;
   height: 56px;
   margin: 1px;
-  background: #fce38a;
-  border: none;
+  background-color: #fce38a;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.submenu-btn:hover {
-  background: #95e1d3;
-  border: none;
+.facebook{
+  background-image: url("../img/facebook.png");
+}
+.twitter{
+  background-image: url("../img/twitter.png");
+}
+.pinterest{
+  background-image: url("../img/pinterest.png");
+}
+.instagram{
+  background-image: url("../img/instagram.png");
+}
+.social-link:hover {
+  background-color: #95e1d3;
 }
 
 /* Footer */
