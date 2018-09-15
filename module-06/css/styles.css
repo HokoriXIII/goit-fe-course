@@ -141,18 +141,18 @@ input[type="radio"].visually-hidden {
   width: 33%;
   margin: 20px auto 79px;
 }
-.sci-img {
+.services-content-item-img {
   width: 33px;
   height: 33px;
   margin: 0 29px;
 }
-.sci-text-title {
+.services-content-item-text-title {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 400;
   color: #333;
 }
-.sci-text-description {
+.services-content-item-text-description {
   font-size: 15px;
   font-family: "Roboto", sans-serif;
   margin-top: 20px;
