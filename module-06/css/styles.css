@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* border: #333 1px solid; */
 }
 .content-area {
   width: 100%;
@@ -127,7 +126,6 @@ input[type="radio"].visually-hidden {
   align-items: stretch;
   justify-content: space-between;
   padding-top: 46px;
-  /* background: chartreuse; */
 }
 
 /* Services */
