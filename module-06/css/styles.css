@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* border: #333 1px solid; */
 }
 .content-area {
   width: 100%;
@@ -9,10 +10,7 @@
   margin: auto;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  display: flex;
-  flex-direction: column;
   background: #fff;
-  /* background: coral; */
 }
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -87,9 +85,6 @@ input[type="radio"].visually-hidden {
 
 /* Section Title */
 .section-title {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   text-align: center;
   color: #333;
   margin: 0 auto;
@@ -103,7 +98,6 @@ input[type="radio"].visually-hidden {
   display: block;
 }
 .section-title-title {
-  /* display: flex; */
   font-family: "Kaushan Script", cursive;
   font-size: 24px;
 }
@@ -131,7 +125,7 @@ input[type="radio"].visually-hidden {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 46px;
   /* background: chartreuse; */
 }
