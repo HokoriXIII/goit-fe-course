@@ -25,7 +25,6 @@ input[type="radio"].visually-hidden {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
 /* Header */
 .header {
   width: 100%;
@@ -81,7 +80,6 @@ input[type="radio"].visually-hidden {
 .nav-item a:hover::after {
   opacity: 1;
 }
-
 /* Section Title */
 .section-title {
   text-align: center;
@@ -118,7 +116,6 @@ input[type="radio"].visually-hidden {
   color: #999;
   margin: 42px auto;
 }
-
 /* Section Content */
 .section-content {
   display: flex;
@@ -127,7 +124,6 @@ input[type="radio"].visually-hidden {
   justify-content: space-between;
   padding-top: 46px;
 }
-
 /* Services */
 .services {
   padding-top: 100px;
@@ -155,7 +151,6 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
   color: #999;
 }
-
 /* Team */
 .team {
 }
@@ -199,7 +194,6 @@ input[type="radio"].visually-hidden {
   opacity: 1;
   transition: transform 200ms linear, opacity 200ms linear;
 }
-
 /* Overlay */
 .overlay {
   position: absolute;
@@ -239,7 +233,6 @@ input[type="radio"].visually-hidden {
 .social-link:hover {
   background-color: #95e1d3;
 }
-
 /* Footer */
 .footer {
   border-top: 1px solid #e5e5e5;
