@@ -76,7 +76,7 @@
 }
 .logo a {
   font-size: 31px;
-  font-family: "GreatVibes", "WisdomScript";
+  font-family: "WisdomScript", "GreatVibes";
   color: #fed136;
   text-decoration: none;
 }
@@ -95,7 +95,7 @@
   font-family: "Montserrat";
   font-weight: 700;
   font-size: 14px;
-  color: #5d5d5d;
+  color: #222222;
   text-decoration: none;
   transition: color 200ms linear;
 }
@@ -228,6 +228,17 @@
 .form textarea::placeholder {
   color: #bbb;
 }
+#email:valid,
+#name:valid,
+#message:valid{
+  outline: 1px solid greenyellow;
+}
+#email:invalid,
+#name:invalid,
+#message:invalid{
+  outline: 1px solid red;
+}
+
 #button {
   text-transform: uppercase;
   padding: 25px 47px;
