@@ -139,7 +139,6 @@
   color: #222;
 }
 
-
 /* Services */
 .section-content {
   display: flex;
@@ -233,12 +232,12 @@
 }
 #email:valid,
 #name:valid,
-#message:valid{
+#message:valid {
   outline: 1px solid greenyellow;
 }
 #email:invalid,
 #name:invalid,
-#message:invalid{
+#message:invalid {
   outline: 1px solid red;
 }
 
