@@ -210,14 +210,6 @@
 }
 .form-item-input {
   width: 100%;
-}
-#message {
-  width: 47.396%;
-}
-#name,
-#email,
-#subject,
-#message {
   padding: 20px;
   text-transform: uppercase;
   border-radius: 4px;
@@ -226,6 +218,14 @@
   font-family: "Montserrat";
   font-weight: 700;
   font-size: 14px;
+}
+#message {
+  width: 47.396%;
+}
+#name,
+#email,
+#subject,
+#message {
 }
 .form input::placeholder,
 .form textarea::placeholder {
@@ -242,7 +242,7 @@
   outline: 1px solid red;
 }
 
-#button {
+.button {
   text-transform: uppercase;
   padding: 25px 47px;
   margin: 0 auto;
