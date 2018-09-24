@@ -60,10 +60,6 @@
   max-width: 960px;
   margin: 0 auto;
 }
-.vertical-container {
-  /* height: 100%;
-  min-height: 100vh; */
-}
 
 /* Header */
 .header {
@@ -110,8 +106,6 @@
   text-align: center;
   color: #333;
   margin: 0 auto;
-}
-.section-title-about {
 }
 .section-title-title {
   font-family: "Montserrat";
@@ -182,8 +176,6 @@
   background-repeat: no-repeat;
   background-image: url(../img/MapImage.png);
   background-position: right bottom;
-  /* width: 100%;
-  min-height: 100vh; */
 }
 .form {
   display: flex;
@@ -230,15 +222,15 @@
 .form textarea::placeholder {
   color: #bbb;
 }
-#email:valid,
-#name:valid,
-#message:valid {
-  outline: 1px solid greenyellow;
+#email:focus:valid,
+#name:focus:valid,
+#message:focus:valid {
+  outline: 4px solid greenyellow;
 }
-#email:invalid,
-#name:invalid,
-#message:invalid {
-  outline: 1px solid red;
+#email:focus:invalid,
+#name:focus:invalid,
+#message:focus:invalid {
+  outline: 4px solid red;
 }
 
 .button {
