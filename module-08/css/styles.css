@@ -23,6 +23,7 @@ h5 {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #000000;
+  background-size: cover;
   color: #fff;
 }
 .header {
