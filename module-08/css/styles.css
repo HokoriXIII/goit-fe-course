@@ -12,10 +12,10 @@ h5 {
   padding: 0;
 }
 .container {
+  width: 320px;
   font-family: "Montserrat";
   margin: 0 auto;
   text-align: center;
-  width: 500px;
 }
 /* Greetings */
 .header {
@@ -115,7 +115,7 @@ h5 {
 }
 .partner-item {
   margin: 14px;
-  /* width: 236px; */
+  width: 236px;
 }
 .partner-item a {
   color: #333;
@@ -186,7 +186,10 @@ h5 {
   cursor: pointer;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 944px) {
+  .container {
+    width: 944px;
+  }
   .header {
     flex-direction: row;
     justify-content: space-between;
@@ -233,7 +236,10 @@ h5 {
     order: 2;
   }
 }
-@media (min-width: 768px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 944px) {
+  .container {
+    width: 768px;
+  }
   .header {
     flex-direction: row;
     justify-content: space-between;
