@@ -23,10 +23,12 @@ h5 {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  margin-top: 21px;
+}
+.header-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 21px;
 }
 .nav {
   order: 1;
@@ -190,9 +192,11 @@ h5 {
     width: 944px;
   }
   .header {
+    margin-top: 38px;
+  }
+  .header-container {
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 38px;
   }
   .nav-list {
     margin-bottom: 0;
@@ -239,9 +243,11 @@ h5 {
     width: 768px;
   }
   .header {
+    margin-top: 38px;
+  }
+  .header-container {
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 38px;
   }
   .nav-list {
     margin-bottom: 0;
