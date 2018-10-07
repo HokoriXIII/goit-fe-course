@@ -197,6 +197,7 @@ h5 {
   .header-container {
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 50px;
   }
   .nav-list {
     margin-bottom: 0;
@@ -248,6 +249,7 @@ h5 {
   .header-container {
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 50px;
   }
   .nav-list {
     margin-bottom: 0;
