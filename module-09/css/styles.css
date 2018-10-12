@@ -26,6 +26,7 @@ h5 {
   left: 50%;
   transform: translateX(-50%);
   margin-top: 21px;
+  width: 100%;
 }
 .header-container {
 }
