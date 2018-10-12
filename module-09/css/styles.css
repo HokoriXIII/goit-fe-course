@@ -263,6 +263,6 @@ h5 {
 }
 @media (max-width: 767px){
   .container{
-    width: 340px;
+    max-width: 340px;
   }
 }
