@@ -14,6 +14,14 @@ const products = {
   cheese: 40
 };
 
+/* Заказ пользователя хранится в виде объекта следующего формата. "имя-продукта":"количество-единиц" */
+const order = {
+  bread: 2,
+  milk: 2,
+  apples: 1,
+  cheese: 1
+};
+
 /* 
     Необходимо создать функцию-конструктор Cashier.
     
@@ -46,17 +54,44 @@ const products = {
 function Cashier(name, productDatabase) {
   // 🔔 не забывайте о this при обращении к свойствам и методам будущего объекта
   this.name = name;
-  this.productDatabase = productDatabase
-  this.customerMoney = customerMoney
+  this.productDatabase = productDatabase;
+  this.customerMoney = 0;
+
+  this.onSuccess = function(change) {
+    console.log(`Спасибо за покупку, ваша сдача ${change}!`);
+  };
+
+  this.onError = function() {
+    console.log("Очень жаль, вам не хватает денег на покупки");
+  };
+
+  this.countTotalPrice = function(order) {
+    let price = 0;
+
+    for (const key in productDatabase) {
+      if (order[key] !== undefined) {
+        price += productDatabase[key] * order[key];
+      }
+    }
+    
+    return price;
+  };
+
+  this.setCustomerMoney = function(value){
+      this.customerMoney = value;
+  }
+
+  this.countChange = function(){
+      return (this.customerMoney >= totalPrice) ? (this.customerMoney - totalPrice) : null
+  }
+
+  this.reset = function(){
+      this.customerMoney = 0;
+  }
+
+
 }
 
-/* Заказ пользователя хранится в виде объекта следующего формата. "имя-продукта":"количество-единиц" */
-const order = {
-  bread: 2,
-  milk: 2,
-  apples: 1,
-  cheese: 1
-};
 
 /* Пример использования */
 const mango = new Cashier("Mango", products);
