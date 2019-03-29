@@ -36,9 +36,9 @@ class Hamburger {
    * @param {String} topping - Тип добавки
    */
   addTopping(topping) {
-    !this._toppings.includes(topping)
-      ? this._toppings.push(topping)
-      : this._toppings;
+    if (!this._toppings.includes(topping)) {
+      this._toppings.push(topping);
+    }
   }
 
   /**
@@ -46,9 +46,7 @@ class Hamburger {
    * @param {String} topping - Тип добавки
    */
   removeTopping(topping) {
-    this._toppings.includes(topping)
-      ? this._toppings.pop(topping)
-      : this._toppings;
+    this._toppings = this._toppings.filter(item => item !== topping);
   }
 
   /**
@@ -106,7 +104,8 @@ class Hamburger {
       Hamburger.SIZES[this._size].calories +
       Hamburger.STUFFINGS[this._stuffing].calories +
       this._toppings.reduce((acc, x) => acc + Hamburger.TOPPINGS[x].calories, 0)
-    );}
+    );
+  }
 }
 
 /*
@@ -148,11 +147,17 @@ Hamburger.STUFFINGS = {
 
 Hamburger.TOPPING_SPICE = "TOPPING_SPICE";
 Hamburger.TOPPING_SAUCE = "TOPPING_SAUCE";
+Hamburger.TOPPING_CREAM = 'TOPPING_CREAM';
+
 
 Hamburger.TOPPINGS = {
   [Hamburger.TOPPING_SPICE]: {
     price: 10,
     calories: 0
+  },
+  [Hamburger.TOPPING_CREAM]: {
+    price: 22,
+    calories: 40
   },
   [Hamburger.TOPPING_SAUCE]: {
     price: 15,
@@ -168,6 +173,7 @@ const hamburger = new Hamburger(
   Hamburger.STUFFING_CHEESE
 );
 
+
 // Добавка из приправы
 hamburger.addTopping(Hamburger.TOPPING_SPICE);
 
@@ -176,6 +182,16 @@ console.log("Calories: ", hamburger.calculateCalories());
 
 // Сколько стоит?
 console.log("Price: ", hamburger.calculatePrice());
+
+
+
+// Добавка из приправы
+hamburger.addTopping(Hamburger.TOPPING_CREAM);
+// Спросим сколько там калорий
+console.log("Calories: ", hamburger.calculateCalories());
+// Сколько стоит?
+console.log("Price: ", hamburger.calculatePrice());
+
 
 // Я тут передумал и решил добавить еще соус
 hamburger.addTopping(Hamburger.TOPPING_SAUCE);
@@ -191,6 +207,7 @@ console.log(
 
 // Убрать добавку
 hamburger.removeTopping(Hamburger.TOPPING_SPICE);
+// hamburger.removeTopping(Hamburger.TOPPING_CREAM);
 
 // Смотрим сколько добавок
 console.log("Hamburger has %d toppings", hamburger.getToppings().length); // 1
