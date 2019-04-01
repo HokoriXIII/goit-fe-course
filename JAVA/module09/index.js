@@ -64,3 +64,142 @@
   
   Где parent* это существующий DOM-узел. 
 */
+
+class Stopwatch {
+  constructor(value) {
+    this.parrentNode = value;
+    this.minutes = "00";
+    this.seconds = "00";
+    this.milisec = 0;
+    this.delta = 0;
+    this.start = 0;
+    this.timerActive = false;
+    this.lapArray = [];
+    this.timerInterval;
+    this.timer;
+    this.buttonStart;
+    this.buttonLap;
+    this.buttonReset;
+    this.lap;
+  }
+
+  createStopwatch() {
+    this.buttonStart = document.createElement("button");
+    this.buttonStart.classList.add("btn");
+    this.buttonStart.innerHTML = "Start";
+
+    this.buttonLap = document.createElement("button");
+    this.buttonLap.classList.add("btn");
+    this.buttonLap.setAttribute("disabled", true);
+    this.buttonLap.innerHTML = "Lap";
+
+    this.buttonReset = document.createElement("button");
+    this.buttonReset.classList.add("btn");
+    this.buttonReset.setAttribute("disabled", true);
+    this.buttonReset.innerHTML = "Reset";
+
+    this.timer = document.createElement("div");
+    this.timer.classList.add("timer");
+    this.timer.innerHTML = "00:00.0";
+
+    this.lap = document.createElement("ul");
+    this.lap.classList.add("laps");
+
+    this.stopwatch = document.createElement("div");
+    this.stopwatch.classList.add("stopwatch");
+
+    this.stopwatch.appendChild(this.timer);
+    this.stopwatch.appendChild(this.buttonStart);
+    this.stopwatch.appendChild(this.buttonLap);
+    this.stopwatch.appendChild(this.buttonReset);
+    this.stopwatch.appendChild(this.lap);
+
+    const stopwatchList = document.querySelector(".stopwatch-list");
+
+    if (this.parrentNode === undefined) {
+      stopwatchList.appendChild(this.stopwatch);
+    } else {
+      this.parrentNode.appendChild(this.stopwatch);
+    }
+  }
+
+  createLapItems() {
+    const li = document.createElement("li");
+    li.innerHTML = this.minutes + ":" + this.seconds + ":" + this.milisec;
+
+    return li;
+  }
+
+  saveTimer() {
+    const li = this.createLapItems();
+    this.lapArray.push(li);
+    this.lapArray.forEach(element => {
+      this.lap.appendChild(element);
+    });
+  }
+
+  startTimer() {
+    this.buttonReset.removeAttribute("disabled");
+    this.buttonLap.removeAttribute("disabled");
+
+    if (!this.timerActive) {
+      this.start = Date.now() - this.delta;
+
+      this.timerInterval = setInterval(this.createTimer.bind(this), 100);
+      this.timerActive = !this.timerActive;
+      this.buttonStart.innerHTML = "Pause";
+    } else {
+      clearInterval(this.timerInterval);
+      this.timerActive = !this.timerActive;
+      this.buttonStart.innerHTML = "Continue";
+    }
+  }
+
+  resetTimer() {
+    clearInterval(this.timerInterval);
+    this.timer.innerHTML = "00:00.0";
+    this.buttonStart.innerHTML = "Start";
+    this.timerActive = false;
+    this.minutes = "00";
+    this.seconds = "00";
+    this.milisec = 0;
+    this.delta = 0;
+    this.lap.innerHTML = "";
+    this.lapArray = [];
+    this.buttonReset.setAttribute("disabled", true);
+    this.buttonLap.setAttribute("disabled", true);
+  }
+
+  createTimer() {
+    this.delta = new Date(Date.now() - this.start);
+    this.milisec = Math.floor(this.delta.getMilliseconds() / 100);
+    this.seconds = this.delta.getSeconds();
+    this.minutes = this.delta.getMinutes();
+
+    if (this.seconds < 10) this.seconds = "0" + this.seconds;
+    if (this.minutes < 10) this.minutes = "0" + this.minutes;
+
+    this.timer.innerHTML =
+      this.minutes + ":" + this.seconds + "." + this.milisec;
+  }
+
+  init() {
+    this.createStopwatch();
+
+    this.buttonStart.addEventListener("click", e => this.startTimer(e));
+    this.buttonLap.addEventListener("click", e => this.saveTimer(e));
+    this.buttonReset.addEventListener("click", e => this.resetTimer(e));
+  }
+}
+
+const watch = new Stopwatch();
+watch.init();
+const parentA = document.querySelector(".stopwatch-list");
+const watchA = new Stopwatch(parentA);
+watchA.init();
+const parentB = document.querySelector(".stopwatch-B");
+const watchB = new Stopwatch(parentB);
+watchB.init();
+const parentC = document.querySelector(".stopwatch-C");
+const watchC = new Stopwatch(parentC);
+watchC.init();

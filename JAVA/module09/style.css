@@ -1,0 +1,48 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+.stopwatch-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stopwatch {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.timer {
+  font-size: 60px;
+  margin: 0.3em;
+  color: #3c4a94;
+}
+
+.btn {
+  font-size: 24px;
+  background: #fff7b0;
+  border: 1px solid #e6e6e6;
+  box-shadow: 2px 3px 6px 1px #e4dfdf;
+  margin: 0 8px;
+  padding: 7px 10px;
+  outline: none;
+  min-width: 130px;
+  border-radius: 3px;
+}
+
+.laps {
+  margin: 15px 0 0;
+  padding: 0;
+  color: #607d8b;
+  font-size: 0;
+}
+
+li {
+  list-style: none;
+  padding: 8px 0;
+  width: 50%;
+  font-size: 24px;
+  display: inline-block;
+  text-align: center;
+}
