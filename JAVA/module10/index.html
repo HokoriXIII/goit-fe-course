@@ -1,12 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="services">
+        <div class="get-users">
+          <form>
+            <input
+              type="button"
+              value="Get All Users"
+              class="btn btn-get-users"
+            />
+          </form>
+        </div>
+        <div class="get-userid">
+          <form action="" method="get" class="getbyid-form">
+            <input
+              type="text"
+              class="getbyid-id"
+              placeholder="Input User ID"
+            />
+            <input type="button" value="Get User ID" class="btn btn-get-user" />
+          </form>
+          <div class="getuserid-data"></div>
+        </div>
+        <div class="add-user">
+          <form action="" method="post" class="adduser-form">
+            <input
+              type="text"
+              class="adduser-name"
+              placeholder="Input User Name"
+            />
+            <input
+              type="text"
+              class="adduser-age"
+              placeholder="Input User Age"
+            />
+            <input type="button" value="Add User" class="btn btn-add-user" />
+          </form>
+          <div class="adduser-data"></div>
+        </div>
+        <div class="update-user">
+          <form action="" method="post" class="updateuser-form">
+            <input
+              type="text"
+              class="updateuser-id"
+              placeholder="Input User ID"
+            />
+            <input
+              type="text"
+              class="updateuser-name"
+              placeholder="Input User Name"
+            />
+            <input
+              type="text"
+              class="updateuser-age"
+              placeholder="Input User Age"
+            />
+            <input
+              type="button"
+              value="Update User"
+              class="btn btn-update-user"
+            />
+          </form>
+        </div>
+        <div class="remove-user">
+          <form action="" method="post" class="removeuser-form">
+            <input
+              type="text"
+              class="removeuser-id"
+              placeholder="Input User ID"
+            />
+            <input
+              type="button"
+              value="Remove User"
+              class="btn btn-remove-user"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="data">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+            </tr>
+          </thead>
+          <tbody class="data_body"></tbody>
+        </table>
+      </div>
+    </div>
+
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>

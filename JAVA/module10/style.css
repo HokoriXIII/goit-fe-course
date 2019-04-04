@@ -1,0 +1,32 @@
+* {
+  font-family: "Roboto", monospace;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.container {
+  display: flex;
+  align-content: space-between;
+}
+.services,
+.data {
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  padding: 5px;
+  width: 43%;
+}
+.data {
+  width: 55%;
+}
+table,
+tr,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0 10px;
+  margin: 0 5px;
+}
