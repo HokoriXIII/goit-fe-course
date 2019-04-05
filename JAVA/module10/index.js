@@ -57,6 +57,51 @@ function addUserData(item) {
   }</td><td>${item.name}</td><td>${item.age}</td></tr></tbody></table>`;
 }
 
+// Валидация
+const showError = function(input, errorMessage) {
+  input.classList.add("isError");
+  const msgError = document.createElement("span");
+  msgError.classList.add("error-message");
+  msgError.innerHTML = errorMessage;
+  input.appendChild(msgError);
+};
+
+const resetError = function(input) {
+  input.classList.remove("isError");
+
+  if (input.lastChild.className == "error-message") {
+    input.removeChild(input.lastChild);
+  }
+};
+
+const validate = function(form) {
+  var elems = form.elements;
+
+  if (elems.id) {
+    resetError(elems.id.parentNode);
+    if (!elems.id.value) {
+      console.log(elems.id)
+      showError(elems.id.parentNode, "Enter id");
+    }
+  }
+
+  if (elems.name) {
+    resetError(elems.name.parentNode);
+    if (!elems.name.value) {
+      console.log(elems.name)
+      showError(elems.name.parentNode, "Enter name");
+    }
+  }
+
+  if (elems.age) {
+    resetError(elems.age.parentNode);
+    if (!elems.age.value || isNaN(elems.age.value)) {
+      console.log(elems.age)
+      showError(elems.age.parentNode, "Enter age");
+    }
+  }
+};
+
 // Получение списка пользователей
 function handleGetUsersClick(e) {
   e.preventDefault();
@@ -83,9 +128,11 @@ getUsers.addEventListener("click", handleGetUsersClick);
 
 // Получение пользователя по ID
 function handleGetUserByIdClick(e) {
+  validate(this.form);
   let form = document.querySelector(".getbyid-form");
   let id = document.querySelector(".getbyid-id");
   e.preventDefault();
+  if (!id.value) return;
   getUserById(id.value);
   form.reset();
 }
@@ -110,10 +157,12 @@ getUser.addEventListener("click", handleGetUserByIdClick);
 
 // Добавление пользователя
 function handleAddUser(e) {
+  validate(this.form);
   let form = document.querySelector(".adduser-form");
   let name = document.querySelector(".adduser-name");
   let age = document.querySelector(".adduser-age");
   e.preventDefault();
+  if (!name.value || !age.value) return;
   addNewUser(name.value, age.value);
   form.reset();
   getAllUsers();
@@ -146,16 +195,19 @@ addUser.addEventListener("click", handleAddUser);
 
 // Редактирование пользователя
 function handleEditUser(e) {
+  validate(this.form);
   let form = document.querySelector(".updateuser-form");
   let id = document.querySelector(".updateuser-id");
   let name = document.querySelector(".updateuser-name");
   let age = document.querySelector(".updateuser-age");
   e.preventDefault();
-  if (id.value !== "" || name.value !== "" || age.value !== "") {
-    editUser(id.value, name.value, age.value);
-  } else {
-    console.log("Заполните все поля!!!");
-  }
+  if (!id.value || !name.value || !age.value) return;
+  // if (id.value !== "" || name.value !== "" || age.value !== "") {
+  //   editUser(id.value, name.value, age.value);
+  // } else {
+  //   console.log("Заполните все поля!!!");
+  // }
+  editUser(id.value, name.value, age.value);
   form.reset();
   getAllUsers();
 }
@@ -192,14 +244,17 @@ updateUser.addEventListener("click", handleEditUser);
 
 // Удаление пользователя
 function handleRemoveUser(e) {
+  validate(this.form);
   let form = document.querySelector(".removeuser-form");
   let id = document.querySelector(".removeuser-id");
   e.preventDefault();
-  if (id.value !== "") {
+  if (!id.value) return;
+  // if (id.value !== "") {
+  //   deleteUser(id.value);
+  // } else {
+  //   console.log("Заполните ID!!!");
+  // }
     deleteUser(id.value);
-  } else {
-    console.log("Заполните ID!!!");
-  }
   form.reset();
   getAllUsers();
 }

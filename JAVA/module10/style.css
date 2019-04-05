@@ -1,5 +1,6 @@
 * {
   font-family: "Roboto", monospace;
+  /* border: 1px solid black; */
 }
 form {
   display: flex;
@@ -16,10 +17,22 @@ form {
   align-content: space-between;
   flex-direction: column;
   padding: 5px;
+}
+.services {
   width: 43%;
 }
 .data {
   width: 55%;
+}
+.input-wrap span {
+  color: brown;
+  margin: 10px;
+  /* width: 100%; */
+}
+input {
+  width: 95%;
+  padding: 5px;
+  margin: 3px;
 }
 table,
 tr,

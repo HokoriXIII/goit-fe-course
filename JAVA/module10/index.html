@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -12,79 +16,119 @@
       <div class="services">
         <div class="get-users">
           <form>
-            <input
-              type="button"
-              value="Get All Users"
-              class="btn btn-get-users"
-            />
+            <div class="input-wrap">
+              <input
+                type="button"
+                value="Get All Users"
+                class="btn btn-get-users"
+              />
+            </div>
           </form>
         </div>
+
         <div class="get-userid">
-          <form action="" method="get" class="getbyid-form">
-            <input
-              type="text"
-              class="getbyid-id"
-              placeholder="Input User ID"
-            />
-            <input type="button" value="Get User ID" class="btn btn-get-user" />
+          <form action="" method="POST" name="id" class="getbyid-form form">
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="getbyid-id"
+                name="id"
+                placeholder="Input User ID"
+              />
+            </div>
+            <div class="input-wrap">
+              <input
+                type="button"
+                value="Get User ID"
+                class="btn btn-get-user"
+              />
+            </div>
           </form>
           <div class="getuserid-data"></div>
         </div>
+
         <div class="add-user">
           <form action="" method="post" class="adduser-form">
-            <input
-              type="text"
-              class="adduser-name"
-              placeholder="Input User Name"
-            />
-            <input
-              type="text"
-              class="adduser-age"
-              placeholder="Input User Age"
-            />
-            <input type="button" value="Add User" class="btn btn-add-user" />
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="adduser-name"
+                name="name"
+                placeholder="Input User Name"
+              />
+            </div>
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="adduser-age"
+                name="age"
+                placeholder="Input User Age"
+              />
+            </div>
+            <div class="input-wrap">
+              <input type="button" value="Add User" class="btn btn-add-user" />
+            </div>
           </form>
           <div class="adduser-data"></div>
         </div>
+
         <div class="update-user">
           <form action="" method="post" class="updateuser-form">
-            <input
-              type="text"
-              class="updateuser-id"
-              placeholder="Input User ID"
-            />
-            <input
-              type="text"
-              class="updateuser-name"
-              placeholder="Input User Name"
-            />
-            <input
-              type="text"
-              class="updateuser-age"
-              placeholder="Input User Age"
-            />
-            <input
-              type="button"
-              value="Update User"
-              class="btn btn-update-user"
-            />
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="updateuser-id"
+                name="id"
+                placeholder="Input User ID"
+              />
+            </div>
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="updateuser-name"
+                name="name"
+                placeholder="Input User Name"
+              />
+            </div>
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="updateuser-age"
+                name="age"
+                placeholder="Input User Age"
+              />
+            </div>
+            <div class="input-wrap">
+              <input
+                type="button"
+                value="Update User"
+                class="btn btn-update-user"
+              />
+            </div>
           </form>
         </div>
+
         <div class="remove-user">
           <form action="" method="post" class="removeuser-form">
-            <input
-              type="text"
-              class="removeuser-id"
-              placeholder="Input User ID"
-            />
-            <input
-              type="button"
-              value="Remove User"
-              class="btn btn-remove-user"
-            />
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="removeuser-id"
+                name="id"
+                placeholder="Input User ID"
+              />
+            </div>
+            <div class="input-wrap">
+              <input
+                type="button"
+                value="Remove User"
+                class="btn btn-remove-user"
+              />
+            </div>
           </form>
         </div>
       </div>
+
       <div class="data">
         <table>
           <thead>
