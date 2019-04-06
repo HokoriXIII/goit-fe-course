@@ -1,0 +1,19 @@
+.url-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px;
+  font-size: 16px;
+  list-style: none;
+  outline: 2px solid teal;
+  margin-top: 10px;
+}
+
+.url-list-item {
+  width: 370px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  outline: 2px solid #212121;
+  margin-bottom: 10px;
+}
