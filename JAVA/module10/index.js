@@ -45,9 +45,13 @@ function updateData(arr) {
 
 function updateSingleData(item) {
   userDataId.innerHTML = "";
-  return `<table><thead><tr><th>ID</th><th>Name</th><th>Age</th></tr></thead><tbody class="data_body"><tr><td>${
-    item.id
-  }</td><td>${item.name}</td><td>${item.age}</td></tr></tbody></table>`;
+  if (item !== undefined) {
+    return `<table><thead><tr><th>ID</th><th>Name</th><th>Age</th></tr></thead><tbody class="data_body"><tr><td>${
+      item.id
+    }</td><td>${item.name}</td><td>${item.age}</td></tr></tbody></table>`;
+  } else {
+    return "Неверный ID";
+  }
 }
 
 function addUserData(item) {
@@ -80,7 +84,7 @@ const validate = function(form) {
   if (elems.id) {
     resetError(elems.id.parentNode);
     if (!elems.id.value) {
-      console.log(elems.id)
+      // console.log(elems.id);
       showError(elems.id.parentNode, "Enter id");
     }
   }
@@ -88,7 +92,7 @@ const validate = function(form) {
   if (elems.name) {
     resetError(elems.name.parentNode);
     if (!elems.name.value) {
-      console.log(elems.name)
+      // console.log(elems.name);
       showError(elems.name.parentNode, "Enter name");
     }
   }
@@ -96,7 +100,7 @@ const validate = function(form) {
   if (elems.age) {
     resetError(elems.age.parentNode);
     if (!elems.age.value || isNaN(elems.age.value)) {
-      console.log(elems.age)
+      // console.log(elems.age);
       showError(elems.age.parentNode, "Enter age");
     }
   }
@@ -146,10 +150,17 @@ function getUserById(id) {
       throw new Error(`Error while fetching: ${response.statusText}`);
     })
     .then(data => {
-      userDataId.innerHTML = updateSingleData(data.data);
+      if (updateSingleData(data.data) !== "Неверный ID") {
+        userDataId.innerHTML = updateSingleData(data.data);
+        alert(`Пользователь c ID  ${id} найден`);
+      } else {
+        userDataId.innerHTML = updateSingleData(data.data);
+        alert("Неверный ID");
+      }
     })
     .catch(error => {
-      console.error("Error", error);
+      console.log(`Пользователь c ID  ${id} не найден`);
+      console.error(error);
     });
 }
 
@@ -162,7 +173,7 @@ function handleAddUser(e) {
   let name = document.querySelector(".adduser-name");
   let age = document.querySelector(".adduser-age");
   e.preventDefault();
-  if (!name.value || !age.value) return;
+  if (!name.value || !age.value || isNaN(age.value)) return;
   addNewUser(name.value, age.value);
   form.reset();
   getAllUsers();
@@ -184,6 +195,7 @@ function addNewUser(name, age) {
     })
     .then(data => {
       console.log(`User "${data.data.name}" has been added! `);
+      alert(`User "${data.data.name}" has been added! `);
       addUserNew.innerHTML = addUserData(data.data);
     })
     .catch(error => {
@@ -201,12 +213,7 @@ function handleEditUser(e) {
   let name = document.querySelector(".updateuser-name");
   let age = document.querySelector(".updateuser-age");
   e.preventDefault();
-  if (!id.value || !name.value || !age.value) return;
-  // if (id.value !== "" || name.value !== "" || age.value !== "") {
-  //   editUser(id.value, name.value, age.value);
-  // } else {
-  //   console.log("Заполните все поля!!!");
-  // }
+  if (!id.value || !name.value || !age.value || isNaN(age.value)) return;
   editUser(id.value, name.value, age.value);
   form.reset();
   getAllUsers();
@@ -231,8 +238,10 @@ function editUser(id, name, age) {
     .then(user => {
       if (user === undefined) {
         console.log(`Пользователь ${name} не найден`);
+        alert(`Пользователь ${name} не найден`);
       } else {
         console.log(`Пользователь ${name} изменен`);
+        alert(`Пользователь ${name} изменен`);
       }
     })
     .catch(error => {
@@ -249,12 +258,7 @@ function handleRemoveUser(e) {
   let id = document.querySelector(".removeuser-id");
   e.preventDefault();
   if (!id.value) return;
-  // if (id.value !== "") {
-  //   deleteUser(id.value);
-  // } else {
-  //   console.log("Заполните ID!!!");
-  // }
-    deleteUser(id.value);
+  deleteUser(id.value);
   form.reset();
   getAllUsers();
 }
@@ -274,8 +278,10 @@ function deleteUser(id) {
     .then(user => {
       if (user === undefined) {
         console.log(`Пользователь ${id} не найден`);
+        alert(`Пользователь ${id} не найден`);
       } else {
         console.log(`Пользователь ${id} удален`);
+        alert(`Пользователь ${id} удален`);
       }
     })
     .catch(error => {
